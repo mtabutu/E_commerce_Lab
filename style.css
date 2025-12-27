@@ -67,6 +67,15 @@ nav a:hover {
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
     font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.category:hover {
+    background-color: #ff6600;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 /* Footer */

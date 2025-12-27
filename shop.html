@@ -120,6 +120,23 @@
             color: white;
             border-color: #ff6600;
         }
+        
+        .filter-btn.active {
+            background-color: #ff6600;
+            color: white;
+            border-color: #ff6600;
+        }
+        
+        .product-card.hidden {
+            display: none;
+        }
+        
+        .no-products {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+            font-size: 1.2em;
+        }
     </style>
 </head>
 <body>
@@ -153,73 +170,279 @@
         <div class="filter-section">
             <h3>Filter by Category</h3>
             <div class="filter-options">
-                <button class="filter-btn">All Products</button>
-                <button class="filter-btn">Electronics</button>
-                <button class="filter-btn">Fashion</button>
-                <button class="filter-btn">Home & Kitchen</button>
-                <button class="filter-btn">Beauty</button>
-                <button class="filter-btn">Sports</button>
-                <button class="filter-btn">Books</button>
+                <button class="filter-btn active" data-category="all">All Products</button>
+                <button class="filter-btn" data-category="electronics">Electronics</button>
+                <button class="filter-btn" data-category="fashion">Fashion</button>
+                <button class="filter-btn" data-category="home-kitchen">Home & Kitchen</button>
+                <button class="filter-btn" data-category="beauty">Beauty</button>
+                <button class="filter-btn" data-category="sports">Sports</button>
+                <button class="filter-btn" data-category="books">Books</button>
             </div>
         </div>
 
         <!-- Products Grid -->
-        <div class="products-grid">
-            <div class="product-card">
+        <div class="products-grid" id="productsGrid">
+            <!-- Electronics Products -->
+            <div class="product-card" data-category="electronics">
                 <div class="product-image">Product Image</div>
                 <div class="product-name">Wireless Headphones</div>
                 <div class="product-price">$79.99</div>
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-category="electronics">
                 <div class="product-image">Product Image</div>
                 <div class="product-name">Smart Watch</div>
                 <div class="product-price">$199.99</div>
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-category="electronics">
                 <div class="product-image">Product Image</div>
-                <div class="product-name">Laptop Backpack</div>
+                <div class="product-name">Laptop</div>
+                <div class="product-price">$899.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="electronics">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Smartphone</div>
+                <div class="product-price">$599.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="electronics">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Tablet</div>
+                <div class="product-price">$349.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="electronics">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Bluetooth Speaker</div>
                 <div class="product-price">$49.99</div>
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
 
-            <div class="product-card">
+            <!-- Fashion Products -->
+            <div class="product-card" data-category="fashion">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Designer Jeans</div>
+                <div class="product-price">$89.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="fashion">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Leather Jacket</div>
+                <div class="product-price">$199.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="fashion">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Sneakers</div>
+                <div class="product-price">$119.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="fashion">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Handbag</div>
+                <div class="product-price">$79.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="fashion">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Sunglasses</div>
+                <div class="product-price">$59.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="fashion">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Watch</div>
+                <div class="product-price">$149.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <!-- Home & Kitchen Products -->
+            <div class="product-card" data-category="home-kitchen">
                 <div class="product-image">Product Image</div>
                 <div class="product-name">Coffee Maker</div>
                 <div class="product-price">$89.99</div>
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-category="home-kitchen">
                 <div class="product-image">Product Image</div>
-                <div class="product-name">Running Shoes</div>
+                <div class="product-name">Air Fryer</div>
                 <div class="product-price">$129.99</div>
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-category="home-kitchen">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Dinnerware Set</div>
+                <div class="product-price">$69.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="home-kitchen">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Blender</div>
+                <div class="product-price">$79.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="home-kitchen">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Cookware Set</div>
+                <div class="product-price">$149.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="home-kitchen">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Vacuum Cleaner</div>
+                <div class="product-price">$199.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <!-- Beauty Products -->
+            <div class="product-card" data-category="beauty">
                 <div class="product-image">Product Image</div>
                 <div class="product-name">Skincare Set</div>
                 <div class="product-price">$59.99</div>
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-category="beauty">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Perfume</div>
+                <div class="product-price">$79.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="beauty">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Makeup Kit</div>
+                <div class="product-price">$49.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="beauty">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Hair Dryer</div>
+                <div class="product-price">$39.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="beauty">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Face Mask Set</div>
+                <div class="product-price">$29.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="beauty">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Lipstick Collection</div>
+                <div class="product-price">$34.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <!-- Sports Products -->
+            <div class="product-card" data-category="sports">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Running Shoes</div>
+                <div class="product-price">$129.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="sports">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Yoga Mat</div>
+                <div class="product-price">$34.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="sports">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Dumbbells Set</div>
+                <div class="product-price">$79.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="sports">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Basketball</div>
+                <div class="product-price">$29.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="sports">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Tennis Racket</div>
+                <div class="product-price">$89.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="sports">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Fitness Tracker</div>
+                <div class="product-price">$99.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <!-- Books Products -->
+            <div class="product-card" data-category="books">
                 <div class="product-image">Product Image</div>
                 <div class="product-name">Novel Collection</div>
                 <div class="product-price">$24.99</div>
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-category="books">
                 <div class="product-image">Product Image</div>
-                <div class="product-name">Yoga Mat</div>
-                <div class="product-price">$34.99</div>
+                <div class="product-name">Cookbook</div>
+                <div class="product-price">$19.99</div>
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
+
+            <div class="product-card" data-category="books">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Science Fiction</div>
+                <div class="product-price">$16.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="books">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">History Book</div>
+                <div class="product-price">$22.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="books">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Biography</div>
+                <div class="product-price">$18.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="books">
+                <div class="product-image">Product Image</div>
+                <div class="product-name">Children's Book</div>
+                <div class="product-price">$14.99</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="no-products hidden" id="noProducts">
+            <p>No products found in this category.</p>
         </div>
     </div>
 
@@ -227,6 +450,81 @@
     <footer>
         <p>&copy; 2025 My Online Shop. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Get URL parameters to check if a category filter is specified
+        const urlParams = new URLSearchParams(window.location.search);
+        const categoryParam = urlParams.get('category');
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
+        const noProductsMessage = document.getElementById('noProducts');
+        const productsGrid = document.getElementById('productsGrid');
+
+        function filterProducts(category) {
+            let visibleCount = 0;
+
+            productCards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Show/hide "no products" message
+            if (visibleCount === 0) {
+                noProductsMessage.classList.remove('hidden');
+                productsGrid.style.display = 'none';
+            } else {
+                noProductsMessage.classList.add('hidden');
+                productsGrid.style.display = 'grid';
+            }
+
+            // Update active button
+            filterButtons.forEach(btn => {
+                if (btn.dataset.category === category) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        // Add click event listeners to filter buttons
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.dataset.category;
+                filterProducts(category);
+                
+                // Update URL without reloading page
+                if (category === 'all') {
+                    window.history.pushState({}, '', 'shop.html');
+                } else {
+                    window.history.pushState({}, '', `shop.html?category=${category}`);
+                }
+            });
+        });
+
+        // Apply filter on page load if category parameter exists
+        if (categoryParam) {
+            // Map URL parameter to category data attribute
+            const categoryMap = {
+                'electronics': 'electronics',
+                'fashion': 'fashion',
+                'home-kitchen': 'home-kitchen',
+                'beauty': 'beauty',
+                'sports': 'sports',
+                'books': 'books'
+            };
+            
+            if (categoryMap[categoryParam]) {
+                filterProducts(categoryMap[categoryParam]);
+            }
+        }
+    </script>
 </body>
 </html>
 
