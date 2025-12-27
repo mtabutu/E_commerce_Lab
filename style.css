@@ -32,12 +32,6 @@ nav a:hover {
     background-color: #e65c00;
 }
 
-nav a.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    pointer-events: none;
-}
-
 /* Hero section */
 .hero {
     background-color: #ffffff;
