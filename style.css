@@ -20,6 +20,11 @@ nav {
     justify-content: center;
     flex-wrap: wrap;
 }
+/* Navigation links, make active link stand out */
+.active {
+  background-color: #ff9d5b;
+  border: #222 2px solid;
+}
 
 nav a {
     color: white;
