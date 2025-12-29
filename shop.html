@@ -79,7 +79,7 @@
             margin-bottom: 15px;
         }
         
-        .add-to-cart-btn {
+        .add-to-cart-btn, .add-to-wishlist-btn {
             background-color: #ff6600;
             color: white;
             border: none;
@@ -89,10 +89,54 @@
             font-size: 16px;
             width: 100%;
             transition: background-color 0.3s;
+            margin-bottom: 8px;
         }
         
         .add-to-cart-btn:hover {
             background-color: #e65c00;
+        }
+        
+        .add-to-wishlist-btn {
+            background-color: #666;
+        }
+        
+        .add-to-wishlist-btn:hover {
+            background-color: #555;
+        }
+        
+        .product-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: none;
+        }
+        
+        .notification.show {
+            display: block;
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
         
         .filter-section {
@@ -191,261 +235,369 @@
         <!-- Products Grid -->
         <div class="products-grid" id="productsGrid">
             <!-- Electronics Products -->
-            <div class="product-card" data-category="electronics">
+            <div class="product-card" data-category="electronics" data-product-id="wireless-headphones" data-product-name="Wireless Headphones" data-product-price="290000" data-product-image="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=200&fit=crop" alt="Wireless Headphones"></div>
                 <div class="product-name">Wireless Headphones</div>
-                <div class="product-price">$79.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 290,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="electronics">
+            <div class="product-card" data-category="electronics" data-product-id="smart-watch" data-product-name="Smart Watch" data-product-price="720000" data-product-image="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=200&fit=crop" alt="Smart Watch"></div>
                 <div class="product-name">Smart Watch</div>
-                <div class="product-price">$199.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 720,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="electronics">
+            <div class="product-card" data-category="electronics" data-product-id="laptop" data-product-name="Laptop" data-product-price="3240000" data-product-image="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300&h=200&fit=crop" alt="Laptop"></div>
                 <div class="product-name">Laptop</div>
-                <div class="product-price">$899.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 3,240,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="electronics">
+            <div class="product-card" data-category="electronics" data-product-id="smartphone" data-product-name="Smartphone" data-product-price="2160000" data-product-image="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&h=200&fit=crop" alt="Smartphone"></div>
                 <div class="product-name">Smartphone</div>
-                <div class="product-price">$599.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 2,160,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="electronics">
+            <div class="product-card" data-category="electronics" data-product-id="tablet" data-product-name="Tablet" data-product-price="1260000" data-product-image="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=300&h=200&fit=crop" alt="Tablet"></div>
                 <div class="product-name">Tablet</div>
-                <div class="product-price">$349.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 1,260,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="electronics">
+            <div class="product-card" data-category="electronics" data-product-id="bluetooth-speaker" data-product-name="Bluetooth Speaker" data-product-price="180000" data-product-image="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=300&h=200&fit=crop" alt="Bluetooth Speaker"></div>
                 <div class="product-name">Bluetooth Speaker</div>
-                <div class="product-price">$49.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 180,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
             <!-- Fashion Products -->
-            <div class="product-card" data-category="fashion">
+            <div class="product-card" data-category="fashion" data-product-id="designer-jeans" data-product-name="Designer Jeans" data-product-price="324000" data-product-image="https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&h=200&fit=crop" alt="Designer Jeans"></div>
                 <div class="product-name">Designer Jeans</div>
-                <div class="product-price">$89.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 324,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="fashion">
+            <div class="product-card" data-category="fashion" data-product-id="leather-jacket" data-product-name="Leather Jacket" data-product-price="720000" data-product-image="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=300&h=200&fit=crop" alt="Leather Jacket"></div>
                 <div class="product-name">Leather Jacket</div>
-                <div class="product-price">$199.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 720,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="fashion">
+            <div class="product-card" data-category="fashion" data-product-id="sneakers" data-product-name="Sneakers" data-product-price="432000" data-product-image="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=200&fit=crop" alt="Sneakers"></div>
                 <div class="product-name">Sneakers</div>
-                <div class="product-price">$119.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 432,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="fashion">
+            <div class="product-card" data-category="fashion" data-product-id="handbag" data-product-name="Handbag" data-product-price="288000" data-product-image="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=300&h=200&fit=crop" alt="Handbag"></div>
                 <div class="product-name">Handbag</div>
-                <div class="product-price">$79.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 288,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="fashion">
+            <div class="product-card" data-category="fashion" data-product-id="sunglasses" data-product-name="Sunglasses" data-product-price="216000" data-product-image="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=300&h=200&fit=crop" alt="Sunglasses"></div>
                 <div class="product-name">Sunglasses</div>
-                <div class="product-price">$59.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 216,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="fashion">
+            <div class="product-card" data-category="fashion" data-product-id="watch" data-product-name="Watch" data-product-price="540000" data-product-image="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=200&fit=crop" alt="Watch"></div>
                 <div class="product-name">Watch</div>
-                <div class="product-price">$149.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 540,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
             <!-- Home & Kitchen Products -->
-            <div class="product-card" data-category="home-kitchen">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1517668808823-b4e24b3e5af0?w=300&h=200&fit=crop" alt="Coffee Maker"></div>
+            <div class="product-card" data-category="home-kitchen" data-product-id="coffee-maker" data-product-name="Coffee Maker" data-product-price="320000" data-product-image="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=300&h=200&fit=crop">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=300&h=200&fit=crop" alt="Coffee Maker"></div>
                 <div class="product-name">Coffee Maker</div>
-                <div class="product-price">$89.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 320,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="home-kitchen">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=300&h=200&fit=crop" alt="Air Fryer"></div>
+            <div class="product-card" data-category="home-kitchen" data-product-id="air-fryer" data-product-name="Air Fryer" data-product-price="460000" data-product-image="https://images.unsplash.com/photo-1608039829570-6b729d5e7b3c?w=300&h=200&fit=crop">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1608039829570-6b729d5e7b3c?w=300&h=200&fit=crop" alt="Air Fryer" onerror="this.src='https://via.placeholder.com/300x200?text=Air+Fryer'"></div>
                 <div class="product-name">Air Fryer</div>
-                <div class="product-price">$129.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 460,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="home-kitchen">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=300&h=200&fit=crop" alt="Dinnerware Set"></div>
+            <div class="product-card" data-category="home-kitchen" data-product-id="dinnerware-set" data-product-name="Dinnerware Set" data-product-price="250000" data-product-image="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=300&h=200&fit=crop">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=300&h=200&fit=crop" alt="Dinnerware Set" onerror="this.src='https://via.placeholder.com/300x200?text=Dinnerware+Set'"></div>
                 <div class="product-name">Dinnerware Set</div>
-                <div class="product-price">$69.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 250,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="home-kitchen">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=300&h=200&fit=crop" alt="Blender"></div>
+            <div class="product-card" data-category="home-kitchen" data-product-id="blender" data-product-name="Blender" data-product-price="290000" data-product-image="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=300&h=200&fit=crop&q=80">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=300&h=200&fit=crop&q=80" alt="Blender" onerror="this.src='https://via.placeholder.com/300x200?text=Blender'"></div>
                 <div class="product-name">Blender</div>
-                <div class="product-price">$79.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 290,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="home-kitchen">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1556911220-e05bdd07d66b?w=300&h=200&fit=crop" alt="Cookware Set"></div>
+            <div class="product-card" data-category="home-kitchen" data-product-id="cookware-set" data-product-name="Cookware Set" data-product-price="540000" data-product-image="https://images.unsplash.com/photo-1556911220-e05bdd07d66b?w=300&h=200&fit=crop">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1556911220-e05bdd07d66b?w=300&h=200&fit=crop&q=80" alt="Cookware Set" onerror="this.src='https://via.placeholder.com/300x200?text=Cookware+Set'"></div>
                 <div class="product-name">Cookware Set</div>
-                <div class="product-price">$149.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 540,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="home-kitchen">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop" alt="Vacuum Cleaner"></div>
+            <div class="product-card" data-category="home-kitchen" data-product-id="vacuum-cleaner" data-product-name="Vacuum Cleaner" data-product-price="720000" data-product-image="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop&q=80">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop&q=80" alt="Vacuum Cleaner" onerror="this.src='https://via.placeholder.com/300x200?text=Vacuum+Cleaner'"></div>
                 <div class="product-name">Vacuum Cleaner</div>
-                <div class="product-price">$199.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 720,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
             <!-- Beauty Products -->
-            <div class="product-card" data-category="beauty">
+            <div class="product-card" data-category="beauty" data-product-id="skincare-set" data-product-name="Skincare Set" data-product-price="216000" data-product-image="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=300&h=200&fit=crop" alt="Skincare Set"></div>
                 <div class="product-name">Skincare Set</div>
-                <div class="product-price">$59.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 216,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="beauty">
+            <div class="product-card" data-category="beauty" data-product-id="perfume" data-product-name="Perfume" data-product-price="288000" data-product-image="https://images.unsplash.com/photo-1541643600914-78b084683601?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=300&h=200&fit=crop" alt="Perfume"></div>
                 <div class="product-name">Perfume</div>
-                <div class="product-price">$79.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 288,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="beauty">
+            <div class="product-card" data-category="beauty" data-product-id="makeup-kit" data-product-name="Makeup Kit" data-product-price="180000" data-product-image="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=300&h=200&fit=crop" alt="Makeup Kit"></div>
                 <div class="product-name">Makeup Kit</div>
-                <div class="product-price">$49.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 180,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="beauty">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300&h=200&fit=crop" alt="Hair Dryer"></div>
+            <div class="product-card" data-category="beauty" data-product-id="hair-dryer" data-product-name="Hair Dryer" data-product-price="144000" data-product-image="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300&h=200&fit=crop&q=80">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300&h=200&fit=crop&q=80" alt="Hair Dryer" onerror="this.src='https://via.placeholder.com/300x200?text=Hair+Dryer'"></div>
                 <div class="product-name">Hair Dryer</div>
-                <div class="product-price">$39.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 144,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="beauty">
+            <div class="product-card" data-category="beauty" data-product-id="face-mask-set" data-product-name="Face Mask Set" data-product-price="108000" data-product-image="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=300&h=200&fit=crop" alt="Face Mask Set"></div>
                 <div class="product-name">Face Mask Set</div>
-                <div class="product-price">$29.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 108,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="beauty">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1583241805004-44d85a8d7fce?w=300&h=200&fit=crop" alt="Lipstick Collection"></div>
+            <div class="product-card" data-category="beauty" data-product-id="lipstick-collection" data-product-name="Lipstick Collection" data-product-price="126000" data-product-image="https://images.unsplash.com/photo-1583241805004-44d85a8d7fce?w=300&h=200&fit=crop&q=80">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1583241805004-44d85a8d7fce?w=300&h=200&fit=crop&q=80" alt="Lipstick Collection" onerror="this.src='https://via.placeholder.com/300x200?text=Lipstick'"></div>
                 <div class="product-name">Lipstick Collection</div>
-                <div class="product-price">$34.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 126,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
             <!-- Sports Products -->
-            <div class="product-card" data-category="sports">
+            <div class="product-card" data-category="sports" data-product-id="running-shoes" data-product-name="Running Shoes" data-product-price="468000" data-product-image="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=200&fit=crop" alt="Running Shoes"></div>
                 <div class="product-name">Running Shoes</div>
-                <div class="product-price">$129.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 468,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="sports">
+            <div class="product-card" data-category="sports" data-product-id="yoga-mat" data-product-name="Yoga Mat" data-product-price="126000" data-product-image="https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=300&h=200&fit=crop" alt="Yoga Mat"></div>
                 <div class="product-name">Yoga Mat</div>
-                <div class="product-price">$34.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 126,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="sports">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop" alt="Dumbbells Set"></div>
+            <div class="product-card" data-category="sports" data-product-id="dumbbells-set" data-product-name="Dumbbells Set" data-product-price="288000" data-product-image="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop&q=80">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop&q=80" alt="Dumbbells Set" onerror="this.src='https://via.placeholder.com/300x200?text=Dumbbells'"></div>
                 <div class="product-name">Dumbbells Set</div>
-                <div class="product-price">$79.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 288,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="sports">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1519861531473-9200262ca5e5?w=300&h=200&fit=crop" alt="Basketball"></div>
+            <div class="product-card" data-category="sports" data-product-id="basketball" data-product-name="Basketball" data-product-price="108000" data-product-image="https://images.unsplash.com/photo-1519861531473-9200262ca5e5?w=300&h=200&fit=crop&q=80">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1519861531473-9200262ca5e5?w=300&h=200&fit=crop&q=80" alt="Basketball" onerror="this.src='https://via.placeholder.com/300x200?text=Basketball'"></div>
                 <div class="product-name">Basketball</div>
-                <div class="product-price">$29.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 108,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="sports">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1622163642999-6c1e8fdc4b4a?w=300&h=200&fit=crop" alt="Tennis Racket"></div>
+            <div class="product-card" data-category="sports" data-product-id="tennis-racket" data-product-name="Tennis Racket" data-product-price="324000" data-product-image="https://images.unsplash.com/photo-1622163642999-6c1e8fdc4b4a?w=300&h=200&fit=crop&q=80">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1622163642999-6c1e8fdc4b4a?w=300&h=200&fit=crop&q=80" alt="Tennis Racket" onerror="this.src='https://via.placeholder.com/300x200?text=Tennis+Racket'"></div>
                 <div class="product-name">Tennis Racket</div>
-                <div class="product-price">$89.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 324,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="sports">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1576243345697-4f6d6be7e95a?w=300&h=200&fit=crop" alt="Fitness Tracker"></div>
+            <div class="product-card" data-category="sports" data-product-id="fitness-tracker" data-product-name="Fitness Tracker" data-product-price="360000" data-product-image="https://images.unsplash.com/photo-1576243345697-4f6d6be7e95a?w=300&h=200&fit=crop&q=80">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1576243345697-4f6d6be7e95a?w=300&h=200&fit=crop&q=80" alt="Fitness Tracker" onerror="this.src='https://via.placeholder.com/300x200?text=Fitness+Tracker'"></div>
                 <div class="product-name">Fitness Tracker</div>
-                <div class="product-price">$99.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 360,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
             <!-- Books Products -->
-            <div class="product-card" data-category="books">
+            <div class="product-card" data-category="books" data-product-id="novel-collection" data-product-name="Novel Collection" data-product-price="90000" data-product-image="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=200&fit=crop" alt="Novel Collection"></div>
                 <div class="product-name">Novel Collection</div>
-                <div class="product-price">$24.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 90,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="books">
+            <div class="product-card" data-category="books" data-product-id="cookbook" data-product-name="Cookbook" data-product-price="72000" data-product-image="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&h=200&fit=crop" alt="Cookbook"></div>
                 <div class="product-name">Cookbook</div>
-                <div class="product-price">$19.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 72,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="books">
+            <div class="product-card" data-category="books" data-product-id="science-fiction" data-product-name="Science Fiction" data-product-price="61200" data-product-image="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300&h=200&fit=crop" alt="Science Fiction"></div>
                 <div class="product-name">Science Fiction</div>
-                <div class="product-price">$16.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 61,200</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="books">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=200&fit=crop" alt="History Book"></div>
+            <div class="product-card" data-category="books" data-product-id="history-book" data-product-name="History Book" data-product-price="82800" data-product-image="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=200&fit=crop">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=200&fit=crop" alt="History Book" onerror="this.src='https://via.placeholder.com/300x200?text=History+Book'"></div>
                 <div class="product-name">History Book</div>
-                <div class="product-price">$22.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 82,800</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="books">
+            <div class="product-card" data-category="books" data-product-id="biography" data-product-name="Biography" data-product-price="68400" data-product-image="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=200&fit=crop" alt="Biography"></div>
                 <div class="product-name">Biography</div>
-                <div class="product-price">$18.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 68,400</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
 
-            <div class="product-card" data-category="books">
+            <div class="product-card" data-category="books" data-product-id="childrens-book" data-product-name="Children's Book" data-product-price="54000" data-product-image="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=200&fit=crop">
                 <div class="product-image"><img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=200&fit=crop" alt="Children's Book"></div>
                 <div class="product-name">Children's Book</div>
-                <div class="product-price">$14.99</div>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="product-price">TSH 54,000</div>
+                <div class="product-buttons">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">Add to Wishlist</button>
+                </div>
             </div>
         </div>
         
@@ -454,12 +606,108 @@
         </div>
     </div>
 
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 My Online Shop. All rights reserved.</p>
     </footer>
 
     <script>
+        // Cart and Wishlist functionality
+        function getCart() {
+            const cart = localStorage.getItem('cart');
+            return cart ? JSON.parse(cart) : [];
+        }
+
+        function getWishlist() {
+            const wishlist = localStorage.getItem('wishlist');
+            return wishlist ? JSON.parse(wishlist) : [];
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        function saveWishlist(wishlist) {
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        }
+
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.classList.add('show');
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        function addToCart(productCard) {
+            const productId = productCard.dataset.productId;
+            const productName = productCard.dataset.productName;
+            const productPrice = productCard.dataset.productPrice;
+            const productImage = productCard.dataset.productImage;
+
+            const cart = getCart();
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: productId,
+                    name: productName,
+                    price: productPrice,
+                    image: productImage,
+                    quantity: 1
+                });
+            }
+
+            saveCart(cart);
+            showNotification(`${productName} added to cart!`);
+        }
+
+        function addToWishlist(productCard) {
+            const productId = productCard.dataset.productId;
+            const productName = productCard.dataset.productName;
+            const productPrice = productCard.dataset.productPrice;
+            const productImage = productCard.dataset.productImage;
+
+            const wishlist = getWishlist();
+            const existingItem = wishlist.find(item => item.id === productId);
+
+            if (!existingItem) {
+                wishlist.push({
+                    id: productId,
+                    name: productName,
+                    price: productPrice,
+                    image: productImage
+                });
+                saveWishlist(wishlist);
+                showNotification(`${productName} added to wishlist!`);
+            } else {
+                showNotification(`${productName} is already in your wishlist!`);
+            }
+        }
+
+        // Add event listeners to all Add to Cart buttons
+        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const productCard = this.closest('.product-card');
+                addToCart(productCard);
+            });
+        });
+
+        // Add event listeners to all Add to Wishlist buttons
+        document.querySelectorAll('.add-to-wishlist-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const productCard = this.closest('.product-card');
+                addToWishlist(productCard);
+            });
+        });
+
+        // Existing filter functionality
         // Get URL parameters to check if a category filter is specified
         const urlParams = new URLSearchParams(window.location.search);
         const categoryParam = urlParams.get('category');
