@@ -183,12 +183,6 @@
             display: none;
         }
         
-        .no-products {
-            text-align: center;
-            padding: 60px 20px;
-            color: #666;
-            font-size: 1.2em;
-        }
     </style>
 </head>
 <body>
@@ -600,10 +594,6 @@
                 </div>
             </div>
         </div>
-        
-        <div class="no-products hidden" id="noProducts">
-            <p>No products found in this category.</p>
-        </div>
     </div>
 
     <!-- Notification -->
@@ -715,7 +705,6 @@
         // Filter functionality
         const filterButtons = document.querySelectorAll('.filter-btn');
         const productCards = document.querySelectorAll('.product-card');
-        const noProductsMessage = document.getElementById('noProducts');
         const productsGrid = document.getElementById('productsGrid');
 
         function filterProducts(category) {
@@ -730,16 +719,8 @@
                 }
             });
 
-            // Show/hide "no products" message - only show if there are actually no products
-            if (visibleCount === 0 && productCards.length > 0) {
-                // Only show if we have products but none match the filter
-                noProductsMessage.classList.remove('hidden');
-                productsGrid.style.display = 'none';
-            } else {
-                // Hide the message if there are products visible
-                noProductsMessage.classList.add('hidden');
-                productsGrid.style.display = 'grid';
-            }
+            // Always show products grid
+            productsGrid.style.display = 'grid';
 
             // Update active button
             filterButtons.forEach(btn => {
@@ -751,12 +732,8 @@
             });
         }
         
-        // Initialize on page load - ensure "no products" message is hidden initially
+        // Initialize on page load
         function initializePage() {
-            // Make sure no products message is hidden on load
-            noProductsMessage.classList.add('hidden');
-            productsGrid.style.display = 'grid';
-            
             // Apply filter if category parameter exists, otherwise show all
             if (categoryParam) {
                 const categoryMap = {
