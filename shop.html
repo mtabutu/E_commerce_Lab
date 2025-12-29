@@ -730,11 +730,13 @@
                 }
             });
 
-            // Show/hide "no products" message
-            if (visibleCount === 0) {
+            // Show/hide "no products" message - only show if there are actually no products
+            if (visibleCount === 0 && productCards.length > 0) {
+                // Only show if we have products but none match the filter
                 noProductsMessage.classList.remove('hidden');
                 productsGrid.style.display = 'none';
             } else {
+                // Hide the message if there are products visible
                 noProductsMessage.classList.add('hidden');
                 productsGrid.style.display = 'grid';
             }
@@ -747,6 +749,33 @@
                     btn.classList.remove('active');
                 }
             });
+        }
+        
+        // Initialize on page load - ensure "no products" message is hidden initially
+        function initializePage() {
+            // Make sure no products message is hidden on load
+            noProductsMessage.classList.add('hidden');
+            productsGrid.style.display = 'grid';
+            
+            // Apply filter if category parameter exists, otherwise show all
+            if (categoryParam) {
+                const categoryMap = {
+                    'electronics': 'electronics',
+                    'fashion': 'fashion',
+                    'home-kitchen': 'home-kitchen',
+                    'beauty': 'beauty',
+                    'sports': 'sports',
+                    'books': 'books'
+                };
+                
+                if (categoryMap[categoryParam]) {
+                    filterProducts(categoryMap[categoryParam]);
+                } else {
+                    filterProducts('all');
+                }
+            } else {
+                filterProducts('all');
+            }
         }
 
         // Add click event listeners to filter buttons
@@ -764,22 +793,8 @@
             });
         });
 
-        // Apply filter on page load if category parameter exists
-        if (categoryParam) {
-            // Map URL parameter to category data attribute
-            const categoryMap = {
-                'electronics': 'electronics',
-                'fashion': 'fashion',
-                'home-kitchen': 'home-kitchen',
-                'beauty': 'beauty',
-                'sports': 'sports',
-                'books': 'books'
-            };
-            
-            if (categoryMap[categoryParam]) {
-                filterProducts(categoryMap[categoryParam]);
-            }
-        }
+        // Initialize page on load
+        initializePage();
     </script>
 </body>
 </html>
