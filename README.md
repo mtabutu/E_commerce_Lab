@@ -1,2 +1,2 @@
 # E_commerce_Lab
-our collaborative projects
+This lab is about collaborating in github. demonstrating the collaborative aspect in software development.
