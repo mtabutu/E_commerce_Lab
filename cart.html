@@ -18,104 +18,25 @@
     <!-- Navigation (9 links) -->
     <nav>
         <a href="index.html">Home</a>
-        <a href="#">Shop</a>
-        <a href="#">Categories</a>
-        <a href="#">New Arrivals</a>
-        <a href="#">Best Sellers</a>
+        <a href="shop.html">Shop</a>
+        <a href="pages/categories.html">Categories</a>
+        <a href="new-arrivals.html">New Arrivals</a>
+        <a href="best-sellers.html">Best Sellers</a>
         <a href="cart.html">Cart</a>
-        <a href="#">Wishlist</a>
-        <a href="#">Account</a>
-        <a href="#">Contact</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="account.html">Account</a>
+        <a href="contact.html">Contact</a>
     </nav>
+    
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
 
     <!-- Cart Section -->
     <section class="cart-container">
         <h2>Shopping Cart</h2>
         
-        <!-- Empty Cart Message (hidden when cart has items) -->
-        <div class="empty-cart" style="display: none;">
-            <p>Your cart is empty</p>
-            <a href="index.html" class="continue-shopping-btn">Continue Shopping</a>
-        </div>
-        
-        <div class="cart-content">
-            <!-- Cart Items -->
-            <div class="cart-items">
-                <!-- Cart Item 1 -->
-                <div class="cart-item">
-                    <img src="https://via.placeholder.com/100x100/ff6600/ffffff?text=Headphones" alt="Wireless Headphones" class="item-image">
-                    <div class="item-info">
-                        <h3>Wireless Headphones</h3>
-                        <p class="item-category">Electronics</p>
-                    </div>
-                    <div class="item-price">Tsh 150,000</div>
-                    <div class="item-quantity">
-                        <button class="qty-btn">-</button>
-                        <span class="qty">1</span>
-                        <button class="qty-btn">+</button>
-                    </div>
-                    <div class="item-total">Tsh 150,000</div>
-                    <button class="remove-btn">Remove</button>
-                </div>
-
-                <!-- Cart Item 2 -->
-                <div class="cart-item">
-                    <img src="https://via.placeholder.com/100x100/ff6600/ffffff?text=Dress" alt="Summer Dress" class="item-image">
-                    <div class="item-info">
-                        <h3>Summer Dress</h3>
-                        <p class="item-category">Fashion</p>
-                    </div>
-                    <div class="item-price">Tsh 30,000</div>
-                    <div class="item-quantity">
-                        <button class="qty-btn">-</button>
-                        <span class="qty">2</span>
-                        <button class="qty-btn">+</button>
-                    </div>
-                    <div class="item-total">Tsh 60,000</div>
-                    <button class="remove-btn">Remove</button>
-                </div>
-
-                <!-- Cart Item 3 -->
-                <div class="cart-item">
-                    <img src="https://via.placeholder.com/100x100/ff6600/ffffff?text=Coffee" alt="Coffee Maker" class="item-image">
-                    <div class="item-info">
-                        <h3>Coffee Maker</h3>
-                        <p class="item-category">Home & Kitchen</p>
-                    </div>
-                    <div class="item-price">Tsh 150,000</div>
-                    <div class="item-quantity">
-                        <button class="qty-btn">-</button>
-                        <span class="qty">1</span>
-                        <button class="qty-btn">+</button>
-                    </div>
-                    <div class="item-total">Tsh 150,000</div>
-                    <button class="remove-btn">Remove</button>
-                </div>
-            </div>
-
-            <!-- Cart Summary -->
-            <div class="cart-summary">
-                <h3>Order Summary</h3>
-                <div class="summary-row">
-                    <span>Subtotal:</span>
-                    <span>Tsh 360,000</span>
-                </div>
-                <div class="summary-row">
-                    <span>Shipping:</span>
-                    <span>Tsh 10,000</span>
-                </div>
-                <div class="summary-row">
-                    <span>Tax:</span>
-                    <span>Tsh 15,000</span>
-                </div>
-                <hr>
-                <div class="summary-row total">
-                    <span>Total:</span>
-                    <span>Tsh 385,000</span>
-                </div>
-                <button class="checkout-btn">Proceed to Checkout</button>
-                <button class="continue-shopping-btn">Continue Shopping</button>
-            </div>
+        <div id="cartContentArea">
+            <!-- Cart content will be dynamically loaded here -->
         </div>
     </section>
 
@@ -124,6 +45,331 @@
         <p>&copy; 2025 My Online Shop. All rights reserved.</p>
     </footer>
 
+    <script>
+        // Sample products data matching the actual images in the project
+        const sampleProducts = [
+            {
+                id: 'headphones',
+                name: 'Wireless Headphones',
+                price: 150000,
+                image: 'headphones.jpg',
+                category: 'Electronics'
+            },
+            {
+                id: 'summer-dress',
+                name: 'Summer Dress',
+                price: 75000,
+                image: 'Summer Dress.jfif',
+                category: 'Fashion'
+            },
+            {
+                id: 'laptop',
+                name: 'New Laptop',
+                price: 2500000,
+                image: 'New laptop.jfif',
+                category: 'Electronics'
+            },
+            {
+                id: 'smartphone',
+                name: 'Smartphone X Pro',
+                price: 1800000,
+                image: 'smartphone-x-pro.jfif',
+                category: 'Electronics'
+            },
+            {
+                id: 'blender',
+                name: 'Multi-purpose Blender',
+                price: 120000,
+                image: 'Multi-purpose Blender.jfif',
+                category: 'Home & Kitchen'
+            },
+            {
+                id: 'leather-jacket',
+                name: 'Leather Jacket',
+                price: 250000,
+                image: 'Leather Jacket.jfif',
+                category: 'Fashion'
+            },
+            {
+                id: 'makeup-kit',
+                name: 'Makeup Kit',
+                price: 85000,
+                image: 'Makeup Kit',
+                category: 'Beauty'
+            },
+            {
+                id: 'handbag',
+                name: 'Designer Handbag',
+                price: 180000,
+                image: 'Handbag.jfif',
+                category: 'Fashion'
+            },
+            {
+                id: 'dior-heels',
+                name: 'Dior Heels',
+                price: 320000,
+                image: 'Dior heels.jfif',
+                category: 'Fashion'
+            },
+            {
+                id: 'coffee-table',
+                name: 'Coffee Table',
+                price: 450000,
+                image: 'Coffee Table.jfif',
+                category: 'Home & Kitchen'
+            },
+            {
+                id: 'kitchen-set',
+                name: 'Kitchen Set',
+                price: 680000,
+                image: 'kitchen set.jfif',
+                category: 'Home & Kitchen'
+            },
+            {
+                id: 'football',
+                name: 'Professional Football',
+                price: 45000,
+                image: 'Football.jfif',
+                category: 'Sports'
+            },
+            {
+                id: 'atomic-habits',
+                name: 'Atomic Habits Book',
+                price: 35000,
+                image: 'Atomic habits.jfif',
+                category: 'Books'
+            },
+            {
+                id: 'skincare',
+                name: 'Skincare Products Set',
+                price: 95000,
+                image: 'Skincare products.jfif',
+                category: 'Beauty'
+            },
+            {
+                id: 'wall-clock',
+                name: 'Wall Clock',
+                price: 55000,
+                image: 'wallclock.jpeg',
+                category: 'Home & Kitchen'
+            }
+        ];
+
+        // Shopping Cart Class
+        class ShoppingCart {
+            constructor() {
+                this.items = this.loadCart();
+                // Add sample products if cart is empty (for demo purposes)
+                if (this.items.length === 0) {
+                    this.addSampleItems();
+                }
+                this.render();
+            }
+
+            // Add sample items for demonstration
+            addSampleItems() {
+                // Add 3 random sample products
+                const samples = [
+                    { ...sampleProducts[0], quantity: 1 }, // Headphones
+                    { ...sampleProducts[1], quantity: 2 }, // Summer Dress
+                    { ...sampleProducts[4], quantity: 1 }  // Blender
+                ];
+                this.items = samples;
+                this.saveCart();
+            }
+
+            loadCart() {
+                const savedCart = localStorage.getItem('cart');
+                return savedCart ? JSON.parse(savedCart) : [];
+            }
+
+            saveCart() {
+                localStorage.setItem('cart', JSON.stringify(this.items));
+            }
+
+            addItem(product) {
+                const existingItem = this.items.find(item => item.id === product.id);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    this.items.push({
+                        id: product.id,
+                        name: product.name,
+                        price: product.price,
+                        image: product.image,
+                        category: product.category,
+                        quantity: 1
+                    });
+                }
+                
+                this.saveCart();
+                this.render();
+                this.showNotification(`${product.name} added to cart!`);
+            }
+
+            updateQuantity(productId, newQuantity) {
+                const item = this.items.find(item => item.id === productId);
+                
+                if (item) {
+                    if (newQuantity <= 0) {
+                        this.removeItem(productId);
+                    } else {
+                        item.quantity = newQuantity;
+                        this.saveCart();
+                        this.render();
+                    }
+                }
+            }
+
+            removeItem(productId) {
+                const itemIndex = this.items.findIndex(item => item.id === productId);
+                
+                if (itemIndex > -1) {
+                    const itemName = this.items[itemIndex].name;
+                    this.items.splice(itemIndex, 1);
+                    this.saveCart();
+                    this.render();
+                    this.showNotification(`${itemName} removed from cart`, 'error');
+                }
+            }
+
+            clearCart() {
+                this.items = [];
+                this.saveCart();
+                this.render();
+                this.showNotification('Cart cleared', 'error');
+            }
+
+            calculateTotals() {
+                const subtotal = this.items.reduce((sum, item) => {
+                    return sum + (item.price * item.quantity);
+                }, 0);
+                
+                const tax = subtotal * 0.18; // 18% VAT
+                const shipping = subtotal > 0 ? 10000 : 0; // TSH 10,000 shipping
+                const total = subtotal + tax + shipping;
+                
+                return { subtotal, tax, shipping, total };
+            }
+
+            formatCurrency(amount) {
+                return `TSH ${Math.round(amount).toLocaleString('en-US')}`;
+            }
+
+            showNotification(message, type = 'success') {
+                const notification = document.getElementById('notification');
+                notification.textContent = message;
+                notification.className = `notification show ${type}`;
+                notification.style.backgroundColor = type === 'error' ? '#dc3545' : '#4CAF50';
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 3000);
+            }
+
+            render() {
+                const cartContentArea = document.getElementById('cartContentArea');
+                
+                if (this.items.length === 0) {
+                    cartContentArea.innerHTML = `
+                        <div class="empty-cart" style="display: block; text-align: center; padding: 60px 20px;">
+                            <div style="font-size: 5em; margin-bottom: 20px;">🛒</div>
+                            <h3>Your Cart is Empty</h3>
+                            <p>Add some products to your cart to get started!</p>
+                            <button class="checkout-btn" style="margin-top: 20px;" onclick="window.location.href='shop.html'">
+                                Continue Shopping
+                            </button>
+                        </div>
+                    `;
+                    return;
+                }
+
+                const totals = this.calculateTotals();
+                
+                const cartHTML = `
+                    <div class="cart-content">
+                        <div class="cart-items">
+                            ${this.items.map(item => `
+                                <div class="cart-item">
+                                    <img src="${item.image}" alt="${item.name}" class="item-image" onerror="this.src='https://via.placeholder.com/100x100/ff6600/ffffff?text=${encodeURIComponent(item.name)}'">
+                                    <div class="item-info">
+                                        <h3>${item.name}</h3>
+                                        <p class="item-category">${item.category || 'General'}</p>
+                                        <div class="item-price" style="display: block; margin-top: 5px;">${this.formatCurrency(item.price)}</div>
+                                    </div>
+                                    <div class="item-quantity">
+                                        <button class="qty-btn" onclick="cart.updateQuantity('${item.id}', ${item.quantity - 1})">-</button>
+                                        <span class="qty">${item.quantity}</span>
+                                        <button class="qty-btn" onclick="cart.updateQuantity('${item.id}', ${item.quantity + 1})">+</button>
+                                    </div>
+                                    <div class="item-total">${this.formatCurrency(item.price * item.quantity)}</div>
+                                    <button class="remove-btn" onclick="cart.removeItem('${item.id}')">Remove</button>
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <div class="cart-summary">
+                            <h3>Order Summary</h3>
+                            <div class="summary-row">
+                                <span>Subtotal (${this.items.reduce((sum, item) => sum + item.quantity, 0)} items):</span>
+                                <span>${this.formatCurrency(totals.subtotal)}</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Tax (18% VAT):</span>
+                                <span>${this.formatCurrency(totals.tax)}</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Shipping:</span>
+                                <span>${this.formatCurrency(totals.shipping)}</span>
+                            </div>
+                            <hr>
+                            <div class="summary-row total">
+                                <span>Total:</span>
+                                <span>${this.formatCurrency(totals.total)}</span>
+                            </div>
+                            <button class="checkout-btn" onclick="cart.checkout()">Proceed to Checkout</button>
+                            <button class="continue-shopping-btn" onclick="window.location.href='shop.html'">Continue Shopping</button>
+                        </div>
+                    </div>
+                `;
+                
+                cartContentArea.innerHTML = cartHTML;
+            }
+
+            checkout() {
+                if (this.items.length === 0) {
+                    this.showNotification('Your cart is empty!', 'error');
+                    return;
+                }
+                
+                const totals = this.calculateTotals();
+                const itemCount = this.items.reduce((sum, item) => sum + item.quantity, 0);
+                
+                const confirmPurchase = confirm(`Thank you for your order!\n\nItems: ${itemCount}\nTotal: ${this.formatCurrency(totals.total)}\n\nClick OK to proceed to checkout.`);
+                
+                if (confirmPurchase) {
+                    this.showNotification('Redirecting to checkout...');
+                    // In real app, redirect to checkout page
+                    // window.location.href = 'checkout.html';
+                }
+            }
+        }
+
+        // Initialize cart
+        const cart = new ShoppingCart();
+
+        // Expose cart to window for use in shop.html
+        window.shoppingCart = cart;
+
+        // Listen for storage events (cart updates from other tabs)
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'cart') {
+                cart.items = cart.loadCart();
+                cart.render();
+            }
+        });
+    </script>
     
 </body>
 </html>
