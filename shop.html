@@ -726,6 +726,42 @@
             }
         }
 
+        function buyNow(productCard) {
+            const productId = productCard.dataset.productId;
+            const productName = productCard.dataset.productName;
+            const productPrice = productCard.dataset.productPrice;
+            const productImage = productCard.dataset.productImage;
+
+            // Add to cart first
+            const cart = getCart();
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: productId,
+                    name: productName,
+                    price: productPrice,
+                    image: productImage,
+                    quantity: 1
+                });
+            }
+
+            saveCart(cart);
+
+            // Show purchase confirmation
+            const confirmPurchase = confirm(`Purchase ${productName} for TSH ${parseInt(productPrice).toLocaleString()}?\n\nClick OK to proceed with purchase.`);
+            
+            if (confirmPurchase) {
+                showNotification(`Purchase successful! ${productName} has been added to your order.`);
+                // In a real application, you would redirect to checkout/payment page here
+                // window.location.href = 'checkout.html';
+            } else {
+                showNotification('Purchase cancelled.');
+            }
+        }
+
         // Add event listeners to all Add to Cart buttons
         document.querySelectorAll('.add-to-cart-btn').forEach(button => {
             button.addEventListener('click', function() {
