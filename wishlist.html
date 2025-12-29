@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Wishlist | My Online Shop</title>
 </head>
+
 <body>
 
     <header>
@@ -14,19 +16,19 @@
     </header>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="#">Shop</a>
-        <a href="#">Categories</a>
-        <a href="#">New Arrivals</a>
-        <a href="#">Best Sellers</a>
-        <a href="#">Cart</a>
-        <a href="#" aria-current="page">Wishlist</a>
-        <a href="#">Account</a>
-        <a href="#">Contact</a>
+        <a href="./index.html">Home</a>
+        <a href="./shop.html">Shop</a>
+        <a href="./categories.html">Categories</a>
+        <a href="./new-arrivals.html">New Arrivals</a>
+        <a href="./best-sellers.html">Best Sellers</a>
+        <a href="./cart.html">Cart</a>
+        <a href="./wishlist.html" class="active">Wishlist</a>
+        <a href="./account.html">Account</a>
+        <a href="./contact.html">Contact</a>
     </nav>
 
     <main style="display: flex; flex-wrap: wrap; padding: 20px; gap: 20px; max-width: 1200px; margin: auto;">
-        
+
         <aside style="flex: 1; min-width: 200px;">
             <section class="category">
                 <h3>My Lists</h3>
@@ -39,8 +41,9 @@
         </aside>
 
         <section style="flex: 3; min-width: 300px;">
-            
-            <div class="hero" style="padding: 20px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
+
+            <div class="hero"
+                style="padding: 20px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
                 <h2 style="margin: 0;">Items (2)</h2>
                 <div>
                     <button aria-label="Share this list">Share</button>
@@ -49,34 +52,42 @@
             </div>
 
             <div class="categories" style="padding: 0;">
-                
+
                 <article class="category" style="position: relative; display: flex; flex-direction: column;">
-                    <button aria-label="Remove from wishlist" style="position: absolute; top: 10px; right: 10px; border: none; background: none; font-size: 1.2rem; cursor: pointer;">&times;</button>
-                    
-                    <div style="height: 180px; background: #eee; border-radius: 5px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                        <img src="headphones.jpg" alt="Premium Wireless Headphones" style="width: 100%; height: 100%; object-fit: cover;">
+                    <button aria-label="Remove from wishlist"
+                        style="position: absolute; top: 10px; right: 10px; border: none; background: none; font-size: 1.2rem; cursor: pointer;">&times;</button>
+
+                    <div
+                        style="height: 180px; background: #eee; border-radius: 5px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                        <img src="headphones.jpg" alt="Premium Wireless Headphones"
+                            style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
 
-                    <p style="color: #ff6600; font-size: 0.75rem; font-weight: bold; margin: 10px 0 5px;">🔥 LOW STOCK</p>
+                    <p style="color: #ff6600; font-size: 0.75rem; font-weight: bold; margin: 10px 0 5px;">🔥 LOW STOCK
+                    </p>
 
                     <h4 style="margin: 5px 0;">Premium Wireless Headphones</h4>
                     <div style="margin-bottom: 10px;">
                         <span style="font-size: 1.1rem; font-weight: bold;">$129.99</span>
-                        <span style="text-decoration: line-through; color: #888; font-size: 0.9rem; margin-left: 5px;">$159.99</span>
+                        <span
+                            style="text-decoration: line-through; color: #888; font-size: 0.9rem; margin-left: 5px;">$159.99</span>
                     </div>
 
                     <small style="color: green; margin-bottom: 15px;">⬇ Price dropped by $30!</small>
-                    
+
                     <div class="hero" style="padding: 0; margin-top: auto;">
                         <button style="width: 100%;" aria-label="Move item to cart">Move to Cart</button>
                     </div>
                 </article>
 
                 <article class="category" style="position: relative; display: flex; flex-direction: column;">
-                    <button aria-label="Remove from wishlist" style="position: absolute; top: 10px; right: 10px; border: none; background: none; font-size: 1.2rem; cursor: pointer;">&times;</button>
-                    
-                    <div style="height: 180px; background: #eee; border-radius: 5px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                        <img src="wallclock.jpeg" alt="Minimalist Wall Clock" style="width: 100%; height: 100%; object-fit: cover;">
+                    <button aria-label="Remove from wishlist"
+                        style="position: absolute; top: 10px; right: 10px; border: none; background: none; font-size: 1.2rem; cursor: pointer;">&times;</button>
+
+                    <div
+                        style="height: 180px; background: #eee; border-radius: 5px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                        <img src="wallclock.jpeg" alt="Minimalist Wall Clock"
+                            style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
 
                     <p style="color: #222; font-size: 0.75rem; font-weight: bold; margin: 10px 0 5px;">SALE</p>
@@ -87,7 +98,7 @@
                     </div>
 
                     <small style="color: #888; margin-bottom: 15px;">No price changes</small>
-                    
+
                     <div class="hero" style="padding: 0; margin-top: auto;">
                         <button style="width: 100%;" aria-label="Move item to cart">Move to Cart</button>
                     </div>
@@ -102,4 +113,5 @@
     </footer>
 
 </body>
+
 </html>
