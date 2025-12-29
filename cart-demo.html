@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cart Demo - My Online Shop</title>
+    <style>
+        .demo-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .demo-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .demo-header h2 {
+            color: #222;
+            font-size: 2em;
+        }
+        
+        .demo-section {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+        }
+        
+        .demo-section h3 {
+            color: #ff6600;
+            margin-top: 0;
+        }
+        
+        .demo-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .demo-btn {
+            padding: 12px 20px;
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .demo-btn:hover {
+            background-color: #e65c00;
+        }
+        
+        .demo-btn.secondary {
+            background-color: #666;
+        }
+        
+        .demo-btn.secondary:hover {
+            background-color: #555;
+        }
+        
+        .cart-info {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #ff6600;
+        }
+        
+        .cart-info h4 {
+            margin-top: 0;
+            color: #222;
+        }
+        
+        .code-block {
+            background-color: #222;
+            color: #4CAF50;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            color: #4CAF50;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>My Online Shop</h1>
+        <p>Cart Feature Demo & Testing</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="categories.html">Categories</a>
+        <a href="new-arrivals.html">New Arrivals</a>
+        <a href="best-sellers.html">Best Sellers</a>
+        <a href="cart.html">Cart</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="account.html">Account</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Demo Content -->
+    <div class="demo-container">
+        <div class="demo-header">
+            <h2>🛒 Shopping Cart Feature Demo</h2>
+            <p>Test the cart functionality with these interactive demos</p>
+        </div>
+
+        <!-- Current Cart Status -->
+        <div class="demo-section">
+            <h3>Current Cart Status</h3>
+            <div id="cartStatus" class="cart-info">
+                <h4>Loading cart information...</h4>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="demo-section">
+            <h3>Quick Test Actions</h3>
+            <div class="demo-buttons">
+                <button class="demo-btn" onclick="addSampleProducts()">Add 3 Sample Products</button>
+                <button class="demo-btn" onclick="viewCart()">View Cart Page</button>
+                <button class="demo-btn secondary" onclick="clearCart()">Clear Cart</button>
+                <button class="demo-btn secondary" onclick="refreshStatus()">Refresh Status</button>
+            </div>
+        </div>
+
+        <!-- Add Individual Products -->
+        <div class="demo-section">
+            <h3>Add Individual Products</h3>
+            <div class="demo-buttons">
+                <button class="demo-btn" onclick="addProduct('wireless-headphones', 'Wireless Headphones', 180000)">
+                    Add Headphones<br><small>TSH 180,000</small>
+                </button>
+                <button class="demo-btn" onclick="addProduct('laptop', 'Laptop', 3240000)">
+                    Add Laptop<br><small>TSH 3,240,000</small>
+                </button>
+                <button class="demo-btn" onclick="addProduct('smartphone', 'Smartphone', 2160000)">
+                    Add Smartphone<br><small>TSH 2,160,000</small>
+                </button>
+                <button class="demo-btn" onclick="addProduct('smart-watch', 'Smart Watch', 120000)">
+                    Add Smart Watch<br><small>TSH 120,000</small>
+                </button>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="demo-section">
+            <h3>✨ Implemented Features</h3>
+            <ul class="feature-list">
+                <li>Add products to cart with quantity tracking</li>
+                <li>Update quantities (increase/decrease)</li>
+                <li>Remove individual items</li>
+                <li>Persistent storage using localStorage</li>
+                <li>Real-time cart total calculation</li>
+                <li>18% VAT tax calculation</li>
+                <li>TSH 5,000 shipping fee</li>
+                <li>Currency formatting in Tanzanian Shillings</li>
+                <li>Responsive design (mobile & desktop)</li>
+                <li>Empty cart state with call-to-action</li>
+                <li>Notification system for user feedback</li>
+                <li>Checkout flow integration ready</li>
+            </ul>
+        </div>
+
+        <!-- Technical Info -->
+        <div class="demo-section">
+            <h3>📋 Technical Information</h3>
+            <p><strong>LocalStorage Key:</strong> <code>cart</code></p>
+            <p><strong>Data Structure:</strong></p>
+            <div class="code-block">
+[
+  {
+    "id": "product-id",
+    "name": "Product Name",
+    "price": 180000,
+    "image": "image-url",
+    "quantity": 2
+  }
+]
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="demo-section">
+            <h3>🔗 Quick Links</h3>
+            <div class="demo-buttons">
+                <button class="demo-btn" onclick="window.location.href='shop.html'">
+                    Browse Products
+                </button>
+                <button class="demo-btn" onclick="window.location.href='cart.html'">
+                    View Cart
+                </button>
+                <button class="demo-btn secondary" onclick="window.location.href='index.html'">
+                    Go Home
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 My Online Shop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Notification system
+        function showNotification(message, type = 'success') {
+            let notification = document.getElementById('demoNotification');
+            
+            if (!notification) {
+                notification = document.createElement('div');
+                notification.id = 'demoNotification';
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    padding: 15px 20px;
+                    border-radius: 5px;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                    z-index: 10000;
+                    color: white;
+                    font-weight: bold;
+                    animation: slideIn 0.3s ease-out;
+                `;
+                document.body.appendChild(notification);
+            }
+
+            notification.style.backgroundColor = type === 'error' ? '#dc3545' : '#4CAF50';
+            notification.textContent = message;
+            notification.style.display = 'block';
+
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
+        // Get cart from localStorage
+        function getCart() {
+            const cart = localStorage.getItem('cart');
+            return cart ? JSON.parse(cart) : [];
+        }
+
+        // Save cart to localStorage
+        function saveCart(cart) {
+            localStorage.setItem('cart', JSON.stringify(cart));
+            refreshStatus();
+        }
+
+        // Add product to cart
+        function addProduct(id, name, price) {
+            const cart = getCart();
+            const existingItem = cart.find(item => item.id === id);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+                showNotification(`${name} quantity increased to ${existingItem.quantity}`);
+            } else {
+                cart.push({
+                    id: id,
+                    name: name,
+                    price: price,
+                    image: `https://via.placeholder.com/200x200?text=${encodeURIComponent(name)}`,
+                    quantity: 1
+                });
+                showNotification(`${name} added to cart!`);
+            }
+
+            saveCart(cart);
+        }
+
+        // Add sample products
+        function addSampleProducts() {
+            const samples = [
+                { id: 'sample-1', name: 'Wireless Headphones', price: 180000 },
+                { id: 'sample-2', name: 'Smart Watch', price: 120000 },
+                { id: 'sample-3', name: 'Bluetooth Speaker', price: 180000 }
+            ];
+
+            samples.forEach(product => {
+                addProduct(product.id, product.name, product.price);
+            });
+        }
+
+        // Clear cart
+        function clearCart() {
+            if (confirm('Are you sure you want to clear the cart?')) {
+                localStorage.removeItem('cart');
+                showNotification('Cart cleared!', 'error');
+                refreshStatus();
+            }
+        }
+
+        // View cart
+        function viewCart() {
+            window.location.href = 'cart.html';
+        }
+
+        // Refresh cart status display
+        function refreshStatus() {
+            const cart = getCart();
+            const statusDiv = document.getElementById('cartStatus');
+            
+            if (cart.length === 0) {
+                statusDiv.innerHTML = `
+                    <h4>Your cart is empty</h4>
+                    <p>Add some products to get started!</p>
+                `;
+                return;
+            }
+
+            const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const tax = subtotal * 0.18;
+            const shipping = 5000;
+            const total = subtotal + tax + shipping;
+
+            const formatCurrency = (amount) => `TSH ${Math.round(amount).toLocaleString('en-US')}`;
+
+            let itemList = '<ul style="margin: 10px 0; padding-left: 20px;">';
+            cart.forEach(item => {
+                itemList += `<li>${item.name} x${item.quantity} - ${formatCurrency(item.price * item.quantity)}</li>`;
+            });
+            itemList += '</ul>';
+
+            statusDiv.innerHTML = `
+                <h4>🛒 Cart Summary</h4>
+                <p><strong>Total Items:</strong> ${itemCount}</p>
+                ${itemList}
+                <hr style="margin: 15px 0; border: none; border-top: 1px solid #ddd;">
+                <p><strong>Subtotal:</strong> ${formatCurrency(subtotal)}</p>
+                <p><strong>Tax (18%):</strong> ${formatCurrency(tax)}</p>
+                <p><strong>Shipping:</strong> ${formatCurrency(shipping)}</p>
+                <p style="font-size: 1.2em; color: #ff6600;"><strong>Total:</strong> ${formatCurrency(total)}</p>
+            `;
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            refreshStatus();
+        });
+
+        // Add CSS animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(400px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
