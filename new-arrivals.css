@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f8;
+}
+
+/* Section */
+.new-arrivals {
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.new-arrivals h2 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* Grid */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* Card */
+.product-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+/* Badges */
+.badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #ff4757;
+    color: #fff;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.category {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    color: #fff;
+}
+
+/* Category colors */
+.electronics { background: #1e90ff; }
+.home        { background: #2ed573; }
+.fashion     { background: #9b59b6; }
+.beauty      { background: #ff6b81; }
+.sports      { background: #ffa502; }
+.books       { background: #57606f; }
+
+/* Text */
+.product-card h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.price {
+    font-weight: bold;
+    color: #2f3542;
+    margin-bottom: 12px;
+}
+
+/* Button */
+.product-card button {
+    width: 100%;
+    padding: 10px;
+    background: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.product-card button:hover {
+    background: #0f70d4;
+}
